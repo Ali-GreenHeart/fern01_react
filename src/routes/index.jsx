@@ -3,6 +3,7 @@ import Counter from '../components/Counter';
 import CounterWithReducer from '../components/CounterWithReducer';
 import ShoppingList from '../components/ShoppingList';
 import UserList from '../components/UserList';
+import UsersWithReducer from '../components/UsersWithReducer';
 import AboutPage from '../pages/About';
 import ContactPage from '../pages/Contact';
 import HomePage from '../pages/Home';
@@ -18,6 +19,7 @@ const WebRouting = () => {
             <Route path='/counter' element={<Counter />} />
             <Route path='/shoppinglist' element={<ShoppingList />} />
             <Route path='/counter-with-reducer' element={<CounterWithReducer />} />
+            <Route path='/users-with-reducer' element={<UsersWithReducer />} />
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/*' element={<NotFound />} />
         </Routes>
