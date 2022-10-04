@@ -1,0 +1,20 @@
+.pageContainer{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.container{
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+.container:hover{
+    box-shadow: 0 0 10px black;
+}
+
+.container > *{
+    text-align: center;
+}

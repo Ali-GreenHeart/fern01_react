@@ -1,0 +1,13 @@
+.darkStyles{
+    color: aqua;
+    background-color: brown;
+}
+
+.lightStyles{
+    color: red;
+    background-color: gold;
+}
+
+button{
+    border-radius: 10px;
+}

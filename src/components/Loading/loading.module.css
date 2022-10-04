@@ -1,0 +1,22 @@
+.loading {
+    position: relative;
+    top: calc(50vh - 50px);
+    width: 50px;
+    height: 50px;
+    border: 3px solid red;
+    border-radius: 50%;
+    border-left-color: green;
+    border-right-color: blue;
+    border-bottom-color: violet;
+    animation: rotate 1s linear infinite alternate;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0) scale(1);
+    }
+
+    to {
+        transform: rotate(1080deg) scale(1.25);
+    }
+}
