@@ -7,6 +7,7 @@ import UsersWithReducer from '../components/UsersWithReducer';
 import AboutPage from '../pages/About';
 import ContactPage from '../pages/Contact';
 import Countries from '../pages/Countries';
+import Country from '../pages/Country';
 import HomePage from '../pages/Home';
 import NotFound from '../pages/NotFound';
 
@@ -23,6 +24,7 @@ const WebRouting = () => {
             <Route path='/users-with-reducer' element={<UsersWithReducer />} />
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/countries' element={<Countries />} />
+            <Route path='/countries/:countryName' element={<Country />} />
             <Route path='/*' element={<NotFound />} />
         </Routes>
     )
