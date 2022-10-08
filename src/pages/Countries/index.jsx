@@ -12,11 +12,11 @@ const CountryLink = ({ name, flag }) => {
             to={`/countries/${name}`}
             style={{
                 border: '1px solid black',
-                display:'block'
+                display: 'block'
             }}
         >{name} <img style={{
-            width: 50,
-            height: 50,
+            width: 150,
+            height: 100,
             objectFit: 'cover'
         }} src={flag} alt={name + ' flag'} /> </Link>
     )
@@ -33,18 +33,17 @@ const Countries = () => {
                 setCountries(data)
             })
     }, [])
+
     return (
         <div style={{
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: "center",
             gap: 20,
-            justifyContent:'flex-start'
+            justifyContent: 'flex-start'
         }}>
             {
-                countries.map((country) => {
-                    return <CountryLink key={country.name} name={country.name} flag={country.flag} />
-                })
+                countries.map(({ name, flag }) => <CountryLink key={name} name={name} flag={flag} />)
             }
         </div>
     )
