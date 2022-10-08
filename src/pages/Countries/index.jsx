@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useReducer } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../../components/Loading";
 import { countriesReducer, COUNTRIES_ACTIONS } from "../../reducers/countries";
 import { compareCountriesByName } from "../../utils";
 
@@ -36,17 +37,26 @@ const Countries = () => {
     }, [])
 
     return (
-        <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: "center",
-            gap: 20,
-            justifyContent: 'flex-start'
-        }}>
-            {
-                countries.map(({ name, flag }) => <CountryLink key={name} name={name} flag={flag} />)
-            }
-        </div>
+        countries.length === 0
+            ?
+            <>
+                <Loading />
+            </>
+            :
+            <>
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: "center",
+                    gap: 20,
+                    justifyContent: 'flex-start'
+                }
+                }>
+                    {
+                        countries.map(({ name, flag }) => <CountryLink key={name} name={name} flag={flag} />)
+                    }
+                </div >
+            </>
     )
 }
 export default Countries;
