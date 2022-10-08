@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useReducer } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { countriesReducer, COUNTRIES_ACTIONS } from "../../reducers/countries";
 import { compareCountriesByName } from "../../utils";
 
 const url = 'https://restcountries.com/v3.1/all'
@@ -23,14 +24,14 @@ const CountryLink = ({ name, flag }) => {
 }
 
 const Countries = () => {
-    const [countries, setCountries] = useState([])
+    const [countries, dispatch] = useReducer(countriesReducer, [])
 
     useEffect(() => {
         axios.get(url)
             .then(({ data }) => {
                 data = data.map((country) => ({ name: country.name.common, flag: country.flags.png }))
                 data.sort(compareCountriesByName)
-                setCountries(data)
+                dispatch({ type: COUNTRIES_ACTIONS.get_countries, payload: data })
             })
     }, [])
 
