@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Counter from '../components/Counter';
 import CounterWithReducer from '../components/CounterWithReducer';
+import CounterWithRedux from '../components/CounterWithRedux';
 import ShoppingList from '../components/ShoppingList';
 import UserList from '../components/UserList';
 import UsersWithReducer from '../components/UsersWithReducer';
@@ -21,6 +22,7 @@ const WebRouting = () => {
             <Route path='/counter' element={<Counter />} />
             <Route path='/shoppinglist' element={<ShoppingList />} />
             <Route path='/counter-with-reducer' element={<CounterWithReducer />} />
+            <Route path='/counter-with-redux' element={<CounterWithRedux />} />
             <Route path='/users-with-reducer' element={<UsersWithReducer />} />
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/countries' element={<Countries />} />
